@@ -1,0 +1,20 @@
+aws:
+  name: "piper-master"
+
+  ami: "ami-018c9568"  # Ubuntu 14.04
+  username: "ubuntu"
+  instance_type: "m1.large"
+
+  access_key_id: ""
+  secret_access_key: ""
+
+  keypair_name: "XXX_keypair"
+  private_key_path: "~/.ssh/XXX_keypair.pem"
+
+  region: "us-east-1"
+  availability_zone: "us-east-1d"
+  security_groups:
+    - ""
+
+  # VPC
+  subnet_id: nil

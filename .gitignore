@@ -52,3 +52,8 @@ coverage.xml
 # Sphinx documentation
 docs/_build/
 
+.vagrant
+
+# Settings
+aws.yml
+salt/pillar/settings.yml
