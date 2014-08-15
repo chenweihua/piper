@@ -19,6 +19,6 @@ zookeeper-bootstrap:
     - highstate: True
     - require:
       {% for instance in range(ninstances) %}
-      - cloud: zookeeper-{{ instance + 1 }}
+      - cloud: zookeeper-{{ instance }}
       {% endfor %}
 {% endif %}
