@@ -4,7 +4,7 @@ include:
 
 {% set ninstances = salt['pillar.get']('instances')['zookeeper']['number'] %}
 {% for instance in range(ninstances) %}
-zookeeper-{{ instance + 1 }}:
+zookeeper-{{ instance }}:
   cloud.profile:
     - profile: zookeeper
     - require:
