@@ -1,3 +1,3 @@
 instances:
   zookeeper:
-    - number: 3
+    number: 3

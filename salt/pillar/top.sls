@@ -4,3 +4,4 @@ base:
     - java
     - luigi
     - zookeeper
+    - instances
