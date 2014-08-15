@@ -1,7 +1,7 @@
 aws:
   name: "piper-master"
 
-  ami: "ami-018c9568"  # Ubuntu 14.04
+  ami: "ami-2f252646"  # Ubuntu 13.10
   username: "ubuntu"
   instance_type: "m1.large"
 
