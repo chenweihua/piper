@@ -56,4 +56,4 @@ docs/_build/
 
 # Settings
 aws.yml
-salt/pillar/settings.yml
+salt/pillar/luigi.yml

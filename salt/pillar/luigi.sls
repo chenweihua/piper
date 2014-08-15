@@ -1,4 +1,4 @@
-{% import_yaml "settings.yml" as settings %}
+{% import_yaml "luigi.yml" as settings %}
 
 luigi:
   access_key: {{ settings.luigi.access_key }}
