@@ -20,6 +20,12 @@ Vagrant.configure("2") do |config|
     salt.verbose = true
   end
 
+  config.vm.provider :virtualbox do |vb|
+    vb.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
+    vb.memory = 1024
+    vb.cpus = 2
+  end
+
   config.vm.provider :aws do |aws, override|
     override.vm.box = "dummy"
     override.vm.box_url = "https://github.com/mitchellh/vagrant-aws/raw/master/dummy.box"
@@ -39,7 +45,9 @@ Vagrant.configure("2") do |config|
     aws.availability_zone = "us-east-1d"
     aws.security_groups = AWS["security_groups"]
 
-    aws.subnet_id = AWS["subnet_id"]
+    if AWS.has_key?("subnet_id")
+      aws.subnet_id = AWS["subnet_id"]
+    end
 
     aws.tags = {
       "Name" => AWS["name"],

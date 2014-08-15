@@ -17,4 +17,4 @@ aws:
     - ""
 
   # VPC
-  subnet_id: nil
+  # subnet_id: ""
