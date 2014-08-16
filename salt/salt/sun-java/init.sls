@@ -3,9 +3,6 @@
 # require a source_url - there is no default download location for a jdk
 {%- if java.source_url is defined %}
 
-include:
-  - java.env
-
 {{ java.prefix }}:
   file.directory:
     - user: root

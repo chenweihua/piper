@@ -1,5 +1,5 @@
 {% from "salt/package-map.jinja" import pkgs with context %}
-{% set cloud = salt.get('salt-cloud', {}) -%}
+{% set cloud = pillar.get('salt-cloud', {}) -%}
 
 python-pip:
   pkg.installed
