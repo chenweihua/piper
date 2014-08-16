@@ -11,7 +11,6 @@ Vagrant.configure("2") do |config|
 
   config.vm.network "forwarded_port", guest: 8888, host: 8888
 
-  # For salt masterless
   config.vm.synced_folder "salt/", "/srv"
 
   config.vm.provision :salt do |salt|
