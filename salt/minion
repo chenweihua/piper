@@ -1,6 +1,4 @@
 id: piper-master
-
-master: salt
 file_client: local
 
 #grains:
