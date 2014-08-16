@@ -115,7 +115,7 @@ def installed(name, env, saltenv='base', user=None):
 
         if conda_pkgname not in conda_list:
             installation = __salt__['conda.install'](package, env=env, user=user)
-            if installation is True:
+            if installation['retcode'] == 0:
                 ret['changes'][package] = 'installed'
                 installed += 1
             else:

@@ -34,15 +34,14 @@ def install(package, env, user=None):
     Install a conda single package in a virutalenv
     """
     if package.startswith('git'):
-        ret = _install_pip(package, env, user=user)
-        return ret
+        return _install_pip(package, env, user=user)
 
     ret = _install_conda(package, env, user=user)
-    if ret is True:
+    if ret['retcode'] == 0:
         return ret
-
-    ret = _install_pip(package, env, user=user)
-    return ret
+    elif 'Error: No packages found in current' in ret['stderr']:
+        ret = _install_pip(package, env, user=user)
+        return ret
 
 
 def list_(env, user=None):
@@ -59,20 +58,12 @@ def list_(env, user=None):
 
 def _install_pip(package, env, user=None):
     cmd = [os.path.join(env, 'bin', 'pip'), 'install', '-q', package]
-    ret = _execcmd(cmd, user=user)
-    if ret['retcode'] == 0:
-        return ret['stdout']
-    else:
-        return salt.exceptions.CommandExecutionError(ret['stderr'])
+    return _execcmd(cmd, user=user)
 
 
 def _install_conda(package, env, user=None):
     cmd = _create_conda_cmd('install', env, [package, '--yes', '-q'])
-    ret = _execcmd(cmd, user=user)
-    if ret['retcode'] == 0:
-        return True
-    else:
-        return 'ERROR: ' + ret['stderr']
+    return _execcmd(cmd, user=user)
 
 
 def _create_conda_cmd(conda_cmd, env, args=None):
