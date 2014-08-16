@@ -1,5 +1,5 @@
 include:
-  - users
+  - user.ubuntu
 
 /home/ubuntu/log:
   file.directory:

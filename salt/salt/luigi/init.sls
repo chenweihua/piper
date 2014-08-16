@@ -3,7 +3,7 @@ include:
 
 luigi:
   conda.installed:
-    - env: /home/ubuntu/.envs/base
+    - env: /home/ubuntu/envs/base
     - user: ubuntu
     - require:
       - sls: python

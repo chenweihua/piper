@@ -1,5 +1,5 @@
 include:
-  - users
+  - user.ubuntu
 
 extend:
   ubuntu:
