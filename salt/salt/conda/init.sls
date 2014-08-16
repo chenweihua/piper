@@ -1,7 +1,6 @@
 miniconda:
   pkg.installed:
-    - names:
-      - git
+    - name: git
   pyenv.installed:
     - name: miniconda-3.4.2
     - default: True
