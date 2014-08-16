@@ -11,14 +11,3 @@ zookeeper-{{ instance }}:
       - sls: salt.cloud
       - sls: salt.master
 {% endfor %}
-
-{% if ninstances > 0 %}
-zookeeper-bootstrap:
-  salt.state:
-    - tgt: 'ipengine-*'
-    - highstate: True
-    - require:
-      {% for instance in range(ninstances) %}
-      - cloud: zookeeper-{{ instance }}
-      {% endfor %}
-{% endif %}

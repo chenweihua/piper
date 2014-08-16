@@ -1,12 +1,9 @@
 # This file managed by Salt, do not edit by hand!!
 #  Based on salt version 0.17.4 default config
-{% set salt = pillar.get('salt', {}) -%}
-{% set master = salt.get('master', {}) -%}
+{% set master = pillar.get('salt-master', {}) -%}
 {%- macro get_config(configname, default_value) -%}
 {%- if configname in master -%}
 {{ configname }}: {{ master[configname] }}
-{%- elif configname in salt -%}
-{{ configname }}: {{ salt[configname] }}
 {%- else -%}
 #{{ configname }}: {{ default_value }}
 {%- endif -%}
@@ -802,4 +799,3 @@ halite:
   {{ name }}: {{ value }}
   {%- endfor %}
 {%- endif %}
-

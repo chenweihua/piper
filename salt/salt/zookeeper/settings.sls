@@ -10,7 +10,7 @@
 {%- set prefix       = p.get('prefix', '/usr/lib/zookeeper') %}
 {%- set java_home    = salt['pillar.get']('java_home', '/usr/lib/java') %}
 
-{%- set version      = g.get('version', p.get('version', '3.4.5')) %}
+{%- set version      = g.get('version', p.get('version', '3.4.6')) %}
 {%- set version_name = 'zookeeper-' + version %}
 {%- set default_url  = 'http://apache.osuosl.org/zookeeper/' + version_name + '/' + version_name + '.tar.gz' %}
 {%- set source_url   = g.get('source_url', p.get('source_url', default_url)) %}

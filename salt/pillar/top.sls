@@ -1,7 +1,7 @@
 base:
   '*':
-    - salt
+    - salt.master
+    - salt.cloud
     - java
     - luigi
-    - zookeeper
     - instances
