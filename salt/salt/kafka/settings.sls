@@ -31,12 +31,12 @@
 {%- set myid = kafkas_with_ids.get(grains.id, '').split('+') | first() %}
 
 {%- from 'zookeeper/settings.sls' import zk with context %}
-{%- set zookeeper_host = zk.zookeepers | first() %}
+{%- set zookeeper_host = zk.zookeeper_host %}
 
 {%- set kafka = {} %}
 {%- do kafka.update({ 'java_home': java_home,
                       'source_url': source_url,
-                      'alt_home' : alzt_home,
+                      'alt_home' : alt_home,
                       'real_home' : real_home,
                       'myid' : myid,
                       'zookeeper_host' : zookeeper_host
