@@ -3,6 +3,7 @@
 {%- from "zookeeper/map.jinja" import zookeeper_map with context %}
 
 include:
+  - sun-java
   - zookeeper
 
 /etc/zookeeper:
@@ -84,6 +85,7 @@ zookeeper-service:
     - name: zookeeper
     - enable: true
     - require:
+      - sls: sun-java
       - file: {{ zk.data_dir }}
 {%- endif %}
 {%- endif %}
