@@ -1,6 +1,7 @@
 id: piper-master
 file_client: local
 
-#grains:
-#  roles:
-#    - zookeeper
+grains:
+ roles:
+   - zookeeper
+   - kafka
