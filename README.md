@@ -32,4 +32,4 @@ Change settings under: `salt/pillar/instances` and `/salt/pillar/salt/cloud.sls`
 a template for the latter is provided as `salt/pillar/salt/cloud.sls.template`
 
 1. `sudo salt-call state.sls instances.kafka`
-2. `sudo salt 'zoo*' state.highstate`
+2. `sudo salt 'kafka*' state.highstate`
