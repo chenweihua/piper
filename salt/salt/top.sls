@@ -1,9 +1,7 @@
 base:
   'piper-master':
-    # - salt.master
-    # - salt.cloud
-    - sun-java
-    - sun-java.env
+    - salt.master
+    - salt.cloud
 
   'roles:zookeeper':
     - match: grain
